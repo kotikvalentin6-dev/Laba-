@@ -1,0 +1,309 @@
+/* Загальні стилі для тіла сторінки */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: 
+        linear-gradient(to bottom, #0a0a0e, #1a1a2e),
+        url('https://i.imgur.com/K4gq0jZ.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+}
+
+/* Головний контейнер, що обмежує ширину сайту */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Стилі для верхнього колонтитула (Header) */
+.page-header {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    line-height: 1;
+    color: #8be9fd;
+    text-shadow: 0 0 8px rgba(139, 233, 253, 0.7);
+}
+
+.site-logo {
+    max-width: 150px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.main-section {
+    display: flex;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar {
+    width: 300px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; 
+}
+
+/* --- Стилі для навігації в бічній колонці --- */
+.sidebar h3 {
+    color: #8be9fd;
+    text-shadow: 0 0 5px rgba(139, 233, 253, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    margin-bottom: 10px;
+}
+
+.sidebar-nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+    background-color: rgba(139, 233, 253, 0.2);
+    color: #fff;
+}
+
+/* Стиль для активного посилання */
+.sidebar-nav a.active {
+    background-color: #8be9fd;
+    color: #1a1a2e;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(139, 233, 253, 0.7);
+}
+
+
+.page-footer {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #a0a0a0;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+    .main-section {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 2em;
+    }
+
+    .site-logo {
+        max-width: 100px;
+    }
+    
+    .content {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* --- Стилі для рекламного банера зліва --- */
+.promo-banner-left {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    display: block;
+    max-width: 200px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.promo-banner-left img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.promo-banner-left:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    .promo-banner-left {
+        display: none;
+    }
+}
+
+/* --- Стилі для поля пошуку --- */
+.search-container {
+    margin-top: 20px;
+}
+
+.search-container form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; 
+}
+
+.search-container input[type="text"] {
+    width: 300px;
+    max-width: 70%; 
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+.search-container input[type="text"]:focus {
+    outline: none;
+    border-color: #8be9fd;
+    box-shadow: 0 0 10px rgba(139, 233, 253, 0.5);
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #1a1a2e;
+    background-color: #8be9fd;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* --- Стиль для напису "roll" у кутку --- */
+.top-left-text {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 1001;
+    pointer-events: none;
+}
+/* ============================
+   СТИЛІ ДЛЯ ФОТО-СЛАЙДЕРА (Тільки фото)
+   ============================ */
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Ширина слайдера */
+    margin: 20px auto 40px auto;
+}
+
+.slider-container {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(139, 233, 253, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #000;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 400px; /* Висота слайдера */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стилі для зображень */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Картинка заповнює весь блок */
+    display: block;
+    /* Курсор залишається звичайним, бо це не посилання */
+    cursor: default; 
+}
+
+/* Кнопки навігації (стрілки) */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(139, 233, 253, 0.8);
+    color: #1a1a2e;
+}
+
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
